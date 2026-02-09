@@ -1,0 +1,6 @@
+@incedentAPI_RimaBouazra_HostAddress = http://localhost:5224
+
+GET {{incedentAPI_RimaBouazra_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
