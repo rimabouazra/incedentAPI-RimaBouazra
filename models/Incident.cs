@@ -7,15 +7,13 @@ namespace incedentAPI_RimaBouazra.models
         public int Id { get; set; }
         [Required]
         [StringLength(30,MinimumLength =3,ErrorMessage ="Entre 3 et 30 caracteres")]
-        public string Title { get; set; } = null!;//la vakeur ne dois pas etre nulle 
+        public string Title { get; set; } = null!;//la valeur ne doit pas etre nulle 
         [Required]
         [StringLength(200)]
         public string Description { get; set; } = string.Empty;// initiamisee vide
         [Required]
         public string Severity { get; set; } = string.Empty;
-        [Required]
         public string Status { get; set; } = string.Empty;
-        [Required]
         public DateTime CreatedAt { get; set; } = DateTime.Now;
     }
 }
