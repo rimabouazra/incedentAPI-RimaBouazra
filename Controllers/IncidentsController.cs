@@ -80,7 +80,7 @@ namespace incedentAPI_RimaBouazra.Controllers
         }
 
         [HttpGet("filter-by-status")]
-        public IActionResult FilterByStatus([FromQuery] string status)
+        public IActionResult FilterByStatus([FromQuery] string status)//version synchrone
         {
             var result = _incidents
                 .Where(i => i.Status.Contains(status, StringComparison.OrdinalIgnoreCase))
@@ -90,7 +90,7 @@ namespace incedentAPI_RimaBouazra.Controllers
         }
 
         [HttpGet("filter-by-severity")]
-        public IActionResult FilterBySeverity([FromQuery] string severity)
+        public IActionResult FilterBySeverity([FromQuery] string severity)//version synchrone
         {
             var result = _incidents
                 .Where(i => i.Severity.Contains(severity, StringComparison.OrdinalIgnoreCase))
@@ -98,6 +98,7 @@ namespace incedentAPI_RimaBouazra.Controllers
 
             return Ok(result);
         }
+
 
     }
 }

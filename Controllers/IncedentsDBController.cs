@@ -121,5 +121,25 @@ namespace incedentAPI_RimaBouazra.Controllers
 
             return Ok(l);
         }
+
+        [HttpGet("filter-by-status-async/{status}")]
+        public async Task<IActionResult> FilterByStatusAsync(string status)
+        {
+            var incidents = await _context.Incidents
+                .Where(i => i.Status.Contains(status))
+                .ToListAsync();
+
+            return Ok(incidents);
+        }
+
+        [HttpGet("filter-by-severity-async/{severity}")]
+        public async Task<IActionResult> FilterBySeverityAsync(string severity)
+        {
+            var incidents = await _context.Incidents
+                .Where(i => i.Severity.Contains(severity))
+                .ToListAsync();
+
+            return Ok(incidents);
+        }
     }
 }
