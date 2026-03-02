@@ -1,3 +1,6 @@
+using incedentAPI_RimaBouazra.models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,6 +11,11 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddDbContext<IncidentsDbContext>(options =>
+options.UseSqlServer(builder.Configuration.
+GetConnectionString("incidentsConnection")));
+
 var app = builder.Build();
 
 

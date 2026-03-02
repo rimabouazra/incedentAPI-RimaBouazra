@@ -10,7 +10,7 @@ namespace incedentAPI_RimaBouazra.models
         public string Title { get; set; } = null!;//la valeur ne doit pas etre nulle 
         [Required]
         [StringLength(200)]
-        public string Description { get; set; } = string.Empty;// initiamisee vide
+        public string Description { get; set; } = string.Empty;// initialisee vide
         [Required]
         public string Severity { get; set; } = string.Empty;
         public string Status { get; set; } = string.Empty;
