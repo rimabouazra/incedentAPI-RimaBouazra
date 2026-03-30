@@ -158,7 +158,7 @@ namespace incedentAPI_RimaBouazra.Controllers
 
             return Ok(incidents);
         }
-        // Action ajoutée par mon collaborateur
+        // Test des pull requests !!!
         [HttpPatch("{id}/status")]
         public async Task<IActionResult> PutIncidentStatus(int id, string status)
         {
