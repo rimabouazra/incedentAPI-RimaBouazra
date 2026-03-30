@@ -77,6 +77,7 @@ namespace incedentAPI_RimaBouazra.Controllers
         [HttpPost]
         public async Task<ActionResult<Incident>> PostIncident(Incident incident)
         {
+            incident.Status = "IN PROGRESS";
             _context.Incidents.Add(incident);
             await _context.SaveChangesAsync();
 
