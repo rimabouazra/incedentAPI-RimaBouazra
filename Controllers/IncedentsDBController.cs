@@ -20,6 +20,11 @@ namespace incedentAPI_RimaBouazra.Controllers
             _context = context;
         }
 
+        private static readonly string[] AllowedSeverities =
+    { "LOW", "MEDIUM", "HIGH", "CRITICAL" };
+
+        private static readonly string[] AllowedStatuses =
+            { "OPEN", "IN PROGRESS", "RESOLVED" };
         // GET: api/IncedentsDB
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Incident>>> GetIncidents()
@@ -74,7 +79,7 @@ namespace incedentAPI_RimaBouazra.Controllers
 
         // POST: api/IncedentsDB
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
+        /*[HttpPost]
         public async Task<ActionResult<Incident>> PostIncident(Incident incident)
         {
             _context.Incidents.Add(incident);
@@ -82,7 +87,18 @@ namespace incedentAPI_RimaBouazra.Controllers
 
             return CreatedAtAction("GetIncident", new { id = incident.Id }, incident);
         }
+        */
+        [HttpPost]
+        public async Task<ActionResult<Incident>> PostIncident(Incident incident)
+        {
+            incident.Status = "OPEN";
+            incident.CreatedAt = DateTime.Now;
 
+            _context.Incidents.Add(incident);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetIncident", new { id = incident.Id }, incident);
+        }
         // DELETE: api/IncedentsDB/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteIncident(int id)
