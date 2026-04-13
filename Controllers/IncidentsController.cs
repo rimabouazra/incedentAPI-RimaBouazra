@@ -22,7 +22,10 @@ namespace incedentAPI_RimaBouazra.Controllers
         {
             if (!AllowedSeverities.Contains(incident.Severity))
                 return BadRequest("Invalid severity");
-
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             incident.Id = _nextId++;
             incident.Status = "OPEN";
             incident.CreatedAt = DateTime.Now;
