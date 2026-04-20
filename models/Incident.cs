@@ -12,6 +12,7 @@ namespace incedentAPI_RimaBouazra.models
         [StringLength(200)]
         public string Description { get; set; } = string.Empty;// initialisee vide
         [Required]
+        [RegularExpression("LOW|MEDIUM|HIGH|CRITICAL", ErrorMessage = "Invalid severity")]
         public string Severity { get; set; } = string.Empty;
         public string Status { get; set; } = string.Empty;
         public DateTime CreatedAt { get; set; } = DateTime.Now;
