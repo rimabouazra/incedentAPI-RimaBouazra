@@ -7,6 +7,14 @@
     <RootNamespace>incedentAPI_RimaBouazra</RootNamespace>
   </PropertyGroup>
 
+  <!-- Exclure le projet de tests du build principal -->
+  <ItemGroup>
+    <Compile Remove="AppTests\**" />
+    <Content Remove="AppTests\**" />
+    <EmbeddedResource Remove="AppTests\**" />
+    <None Remove="AppTests\**" />
+  </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.3" />

@@ -1,3 +1,4 @@
+# .github/workflows/tests-ci.yml
 name: .NET CI Pipeline
 
 on:
@@ -20,10 +21,10 @@ jobs:
         dotnet-version: '10.0.x'
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore incedentAPI-RimaBouazra.slnx
 
-    - name: Build project
-      run: dotnet build --no-restore
+    - name: Build solution
+      run: dotnet build incedentAPI-RimaBouazra.slnx --no-restore
 
     - name: Run tests
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test incedentAPI-RimaBouazra.slnx --no-build --verbosity normal
