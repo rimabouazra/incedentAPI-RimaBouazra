@@ -1,4 +1,3 @@
-# .github/workflows/tests-ci.yml
 name: .NET CI Pipeline
 
 on:
@@ -23,8 +22,14 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore incedentAPI-RimaBouazra.slnx
 
-    - name: Build solution
+    - name: Build project
       run: dotnet build incedentAPI-RimaBouazra.slnx --no-restore
 
     - name: Run tests
-      run: dotnet test incedentAPI-RimaBouazra.slnx --no-build --verbosity normal
+      run: dotnet test incedentAPI-RimaBouazra.slnx --no-build --verbosity normal --logger "trx;LogFileName=TestResults.trx"
+
+    - name: Upload test report
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-report
+        path: '**/TestResults.trx'
