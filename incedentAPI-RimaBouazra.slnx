@@ -3,9 +3,6 @@
   <Folder Name="/.github/workflows/">
     <File Path="tests-ci.yml" />
   </Folder>
-<<<<<<< HEAD
-=======
   <Project Path="../AppTests/AppTests.csproj" Id="10f527d4-fe7b-4bf0-9cb2-a53106f68763" />
->>>>>>> 52778e36b7749405fe7b2d39116a737cfa1cf259
   <Project Path="incedentAPI-RimaBouazra.csproj" />
 </Solution>
