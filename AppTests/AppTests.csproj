@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\incedentAPI-RimaBouazra\incedentAPI-RimaBouazra.csproj" />
+    <ProjectReference Include="..\incedentAPI-RimaBouazra.csproj" />
   </ItemGroup>
 
   <ItemGroup>
