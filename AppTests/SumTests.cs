@@ -1,7 +1,7 @@
 ﻿using incedentAPI_RimaBouazra.Classes;
 
 namespace AppTests
-{
+{   [Trait("Category", "Unit")] 
     public class SumTests
     {
         [Fact]

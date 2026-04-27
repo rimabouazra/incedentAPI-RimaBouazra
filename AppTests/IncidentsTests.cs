@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace AppTests
-{
+{   [Trait("Category", "Unit")] 
     public class IncidentsTests
     {
         private IncidentsDbContext GetDbContext()

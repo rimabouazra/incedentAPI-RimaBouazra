@@ -1,7 +1,7 @@
 ﻿using incedentAPI_RimaBouazra.models;
 using System.Net.Http.Json;
 using Xunit;
-
+[Trait("Category", "Integration")]
 public class IncidentsIntegrationTests : IClassFixture<CustomWebApplicationFactory>
 {
     private readonly HttpClient _client;

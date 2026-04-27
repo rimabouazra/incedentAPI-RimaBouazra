@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/.github/" />
   <Folder Name="/.github/workflows/">
+    <File Path="tests-2jobs.yml" />
     <File Path="tests-ci.yml" />
   </Folder>
   <Project Path="AppTests/AppTests.csproj" Id="10f527d4-fe7b-4bf0-9cb2-a53106f68763" />
