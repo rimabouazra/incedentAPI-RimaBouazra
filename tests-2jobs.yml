@@ -58,3 +58,12 @@ jobs:
       env:
         ConnectionStrings__incidentsConnection: "Server=localhost,1433;Database=IncidentsDb;User Id=sa;Password=My_password123;TrustServerCertificate=True;"
       run: dotnet test incedentAPI-RimaBouazra.slnx --no-build --verbosity normal --filter "Category=Integration"
+deploy:
+    needs: [unit-tests, integration-tests]
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Simulate deployment
+      run: |
+        echo "Deploying application..."
+        echo "Deployment successful!"
