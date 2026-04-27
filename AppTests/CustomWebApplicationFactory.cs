@@ -11,20 +11,27 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
     {
         builder.UseEnvironment("Testing");
 
-        builder.ConfigureServices(services =>
+        builder.ConfigureServices((context, services) =>
         {
+            // Supprimer l'ancien DbContext
             var descriptor = services.SingleOrDefault(
                 d => d.ServiceType == typeof(DbContextOptions<IncidentsDbContext>));
 
             if (descriptor != null)
                 services.Remove(descriptor);
 
-            services.AddDbContext<IncidentsDbContext>(options =>
-                options.UseSqlServer(
-                    "Server=(localdb)\\mssqllocaldb;Database=IncidentDb_Test;Trusted_Connection=True;TrustServerCertificate=True;"));
+            // Récupérer la config (prend en compte les variables d'environnement du pipeline)
+            var configuration = context.Configuration;
+            var connectionString = configuration.GetConnectionString("incidentsConnection");
 
+            // Ajouter le DbContext avec la bonne connexion
+            services.AddDbContext<IncidentsDbContext>(options =>
+                options.UseSqlServer(connectionString));
+
+            // Construire le provider
             var sp = services.BuildServiceProvider();
 
+            // Initialiser la BD
             using (var scope = sp.CreateScope())
             {
                 var db = scope.ServiceProvider.GetRequiredService<IncidentsDbContext>();
