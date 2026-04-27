@@ -55,7 +55,7 @@ public class IncidentsIntegrationTests : IClassFixture<CustomWebApplicationFacto
         var response = await _client.GetAsync("/api/IncedentsDB");
 
         var data = await response.Content.ReadFromJsonAsync<List<Incident>>();
-
+        Assert.NotNull(data);
         Assert.Contains(data, i => i.Title == "Integration Test");
     }
 }
