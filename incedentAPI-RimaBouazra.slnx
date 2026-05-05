@@ -4,6 +4,10 @@
     <File Path="tests-2jobs.yml" />
     <File Path="tests-ci.yml" />
   </Folder>
-  <Project Path="AppTests/AppTests.csproj" Id="10f527d4-fe7b-4bf0-9cb2-a53106f68763" />
-  <Project Path="incedentAPI-RimaBouazra.csproj" />
+  <Folder Name="/Éléments de solution/">
+    <File Path=".dockerignore" />
+    <File Path="Dockerfile" />
+  </Folder>
+  <Project Path="../../../../../../OneDrive/Bureau/MPGL/DevOps/Projet1/incedentAPI-RimaBouazra/AppTests/AppTests.csproj" Id="10f527d4-fe7b-4bf0-9cb2-a53106f68763" />
+  <Project Path="../../../../../../OneDrive/Bureau/MPGL/DevOps/Projet1/incedentAPI-RimaBouazra/incedentAPI-RimaBouazra.csproj" />
 </Solution>
