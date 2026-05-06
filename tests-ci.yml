@@ -1,11 +1,7 @@
 name: .NET CI Pipeline
 
 on:
-  workflow_dispatch:  
-  #push:
-   # branches: [ "master" ]
-  #pull_request:
-   # branches: [ "master" ]
+  workflow_dispatch:  # seulement si déclenché manuellement
 
 jobs:
   build-and-test:
